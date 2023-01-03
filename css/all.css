@@ -1,0 +1,33 @@
+html,
+body {
+    height: 100%;
+}
+
+img {
+    object-fit: contain;
+    max-width: 100%;
+    height: auto;
+}
+
+.primary-image {
+    height: 300px;
+}
+
+.images {
+    height: 150px;
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+
+.cursor-pointer{
+    cursor:pointer
+}
+
+.bg-gray{
+    background-color: #ECECEC;
+}
