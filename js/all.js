@@ -21,7 +21,7 @@ const app = {
                 .then(response => {
                     const { token, expired } = response.data
 
-                    document.cookie = `token=${token};expires=${new Date(expired)};path=/Vue-W2/login.html`;
+                    document.cookie = `token=${token};expires=${new Date(expired)};path=/Vue-W2/products.html`;
                     location.href = `http${this.secure}://${this.domain}/Vue-W2/products.html`
 
                 }).catch(error => {
