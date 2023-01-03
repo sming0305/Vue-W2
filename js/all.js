@@ -21,11 +21,8 @@ const app = {
                 .then(response => {
                     const { token, expired } = response.data
 
-                    console.log("有儲存cookie")
-                    console.log(userInfo)
-
                     document.cookie = `token=${token};expires=${new Date(expired)};path=/Vue-W2/login.html`;
-                    // location.href = `http${this.secure}://${this.domain}/Vue-W2/login.html`
+                    location.href = `http${this.secure}://${this.domain}/Vue-W2/products.html`
 
                 }).catch(error => {
                     console.log(error)
@@ -37,13 +34,9 @@ const app = {
                 const token = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*\=\s*([^;]*).*$)|^.*$/, "$1");
                 axios.defaults.headers.common['Authorization'] = token;
 
-                console.log("測試1")
-
                 axios.post("https://vue3-course-api.hexschool.io/v2/api/user/check")
                     .then(response => {
-                        console.log("測試2")
                     }).catch(error => {
-                        console.log("測試3")
                         console.log(error)
                         alert("驗證錯誤 或 驗證已過期，將為您登出，請重新登入")
                         location.href = `http${this.secure}://${this.domain}/Vue-W2/login.html`
@@ -73,7 +66,6 @@ const app = {
     mounted() {
         this.check()
         this.getProductData()
-        
     }
 }
 
